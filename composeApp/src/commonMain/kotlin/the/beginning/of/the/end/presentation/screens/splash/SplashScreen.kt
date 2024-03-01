@@ -168,7 +168,7 @@ fun SplashScreen(action: CommonAction) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Box(
-                    modifier = Modifier.background(Colors.orange.copy(alpha = 0.8f))
+                    modifier = Modifier.background(Colors.orange.copy(alpha = 0.7f))
                         .padding(20.dp), contentAlignment = Alignment.Center
                 ) {
                     CompositionLocalProvider(LocalTextStyle provides MaterialTheme.typography.titleMedium.copy(color = Colors.brown)){
@@ -192,7 +192,8 @@ fun SplashScreen(action: CommonAction) {
                                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
                                         AnimatedContent(targetState = days, transitionSpec = numberTransitionSpec) {
-                                            Text(days, style = MaterialTheme.typography.displayLarge.copy(Colors.brown2))
+                                            val style = MaterialTheme.typography.displayLarge.copy(Colors.brown2)
+                                            Text(days, style = style.copy(fontSize = style.fontSize.times(2)))
                                         }
                                         Text(unit)
 
